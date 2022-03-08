@@ -20,7 +20,10 @@ use App\Http\Controllers\ProductController;
 
 
 // Main Rout
-Route::get('/', [HomeController::class, 'index'])->name('main-page');
+Route::get('/', function(){
+                return view('pages.main');
+                })->name('main-page');
+
 // about 
 Route::get('/about', [AboutController::class, 'index'])->name('about-page');
 // product

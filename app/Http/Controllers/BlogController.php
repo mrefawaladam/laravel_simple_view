@@ -8,11 +8,8 @@ class BlogController extends Controller
 {
     public function index()
     {
-        return view('pages.about.blog');
+        return view('pages.blog');
     }
 
-    public function detail($keyword)
-    {
-        return view('pages.about.blog',compact('keyword'));
-    }
+ 
 }
