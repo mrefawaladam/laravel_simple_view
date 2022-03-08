@@ -20,14 +20,16 @@ use App\Http\Controllers\ProductController;
 
 
 // Main Rout
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/product', [ProductController::class, 'index']);
-Route::get('/blog', [BlogController::class, 'index']);
-Route::get('/contact-us', [ContactController::class, 'index']);
-
-
-
+Route::get('/', [HomeController::class, 'index'])->name('main-page');
+// about 
+Route::get('/about', [AboutController::class, 'index'])->name('about-page');
+// product
+Route::get('/product', [ProductController::class, 'index'])->name('product-page');
+// blog
+Route::get('/blog', [BlogController::class, 'index'])->name('blog-page');;
+Route::get('/blog/{keyword}', [BlogController::class, 'detail'])->name('blog-detail-page');;
+// contact
+Route::get('/contact-us', [ContactController::class, 'index'])->name('contact-page');;
 
 Auth::routes();
 
